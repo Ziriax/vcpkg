@@ -1,13 +1,9 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO  strukturag/libheif 
-    REF v1.7.0
-    SHA512 7da6ab9daf253c2493e0c3960c6f817e0234dfbd0463467cd1e5f11f7d6804735e401b73fb1038b8f81cfc6527fafb6ac7f4668c3de9400a0131c1292bdbe660 
+    REF v1.9.1
+    SHA512 ab9bd455499223f234efba255c2a0bda418381ccd6cc3cda667ddf7ca3c73efc01385bf629662f72693e40757d3d512b6662c9a6424e7d81d348a3a02ca77a90 
     HEAD_REF master
-    PATCHES
-        dont_build_examples_and_gdk_pixbuf.patch
-        remove_finding_pkgconfig.patch
-        install-extra-headers.patch
 )
 
 vcpkg_configure_cmake(
