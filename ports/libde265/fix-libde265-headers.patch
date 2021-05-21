@@ -1,5 +1,20 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index ff93c52e..e0c92981 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -55,7 +55,9 @@ endif()
+ option(DISABLE_SSE "Disable SSE optimizations" OFF)
+ 
+ option(BUILD_SHARED_LIBS "Build shared library" ON)
+-if(NOT BUILD_SHARED_LIBS)
++if(BUILD_SHARED_LIBS)
++  add_definitions(-DLIBDE265_EXPORTS)
++else()
+   add_definitions(-DLIBDE265_STATIC_BUILD)
+ endif()
+ 
 diff --git a/libde265/CMakeLists.txt b/libde265/CMakeLists.txt
-index 749c7fb..45e7419 100644
+index 749c7fba..36fde916 100644
 --- a/libde265/CMakeLists.txt
 +++ b/libde265/CMakeLists.txt
 @@ -43,7 +43,7 @@ set (libde265_headers
@@ -11,7 +26,16 @@ index 749c7fb..45e7419 100644
    contextmodel.h
    de265.h
    deblock.h
-@@ -119,7 +119,6 @@ install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Config
+@@ -84,8 +84,6 @@ if(MSVC OR MINGW)
+   )
+ endif()
+ 
+-add_definitions(-DLIBDE265_EXPORTS)
+-
+ add_subdirectory (encoder)
+ 
+ if(NOT DISABLE_SSE)
+@@ -119,7 +117,6 @@ install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Config
  )
  
  install(FILES ${libde265_headers} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME})

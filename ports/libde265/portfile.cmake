@@ -3,8 +3,8 @@ vcpkg_fail_port_install(ON_ARCH "arm" ON_TARGET "uwp")
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO strukturag/libde265
-    REF 8aed7472df0af25b811828fa14f2f169dc34d35a # v1.0.8
-    SHA512 e2da1436e5b0d8a3841087e879fbbff5a92de4ebb69d097959972ec8c9407305bc2a17020cb46139fbacc84f91ff8cfb4d9547308074ba213e002ee36bb2e006
+    REF ae99d397cea0612523b174ae5b96dc8845ee482f # v1.0.8+
+    SHA512 88a2e54ec7073796b033c4cf217a95472f37c98c41a0fc1265cf72a914884f54840bd21d46d89da0245e83eb13fa47f31c365496bb9d6492115daac42e8a2c93
     HEAD_REF master
     PATCHES
         fix-libde265-headers.patch
